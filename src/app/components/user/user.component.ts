@@ -10,6 +10,11 @@ export class UserComponent implements OnInit {
   firstName: string;
   lastName: string;
   age: number;
+  address: {
+    street: string;
+    city: string;
+    state: string;
+  };
   //Methods
   constructor() {}
 
@@ -17,11 +22,10 @@ export class UserComponent implements OnInit {
     (this.firstName = "Mark"),
       (this.lastName = "Anthony"),
       (this.age = 32),
-      this.hasBirthday();
-    console.log(this.age);
-  }
-
-  hasBirthday() {
-    this.age + 1;
+      (this.address = {
+        street: "3 Harison street",
+        city: "Dallas",
+        state: "TX"
+      });
   }
 }
