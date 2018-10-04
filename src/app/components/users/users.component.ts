@@ -9,6 +9,9 @@ import { User } from "../../models/User";
 })
 export class UsersComponent implements OnInit {
   users: User[];
+  showExtended: boolean = true;
+  loaded: boolean = false;
+
   constructor() {}
 
   ngOnInit() {
@@ -44,5 +47,15 @@ export class UsersComponent implements OnInit {
         }
       }
     ];
+    this.loaded = true;
+
+    this.addUser({
+      firstName: "David",
+      lastName: "Fallon"
+    });
+  }
+
+  addUser(user: User) {
+    this.users.push(user);
   }
 }
