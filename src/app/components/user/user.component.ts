@@ -1,5 +1,7 @@
 import { Component, OnInit } from "@angular/core";
 
+import { User } from "../../models/User";
+
 @Component({
   selector: "app-user",
   templateUrl: "./user.component.html",
@@ -7,25 +9,20 @@ import { Component, OnInit } from "@angular/core";
 })
 export class UserComponent implements OnInit {
   //Properties
-  firstName: string;
-  lastName: string;
-  age: number;
-  address: {
-    street: string;
-    city: string;
-    state: string;
-  };
+  user: User;
   //Methods
   constructor() {}
 
   ngOnInit() {
-    (this.firstName = "Mark"),
-      (this.lastName = "Anthony"),
-      (this.age = 32),
-      (this.address = {
-        street: "3 Harison street",
+    this.user = {
+      firstName: "Mark",
+      lastName: "Anthony",
+      age: 31,
+      address: {
+        street: "3 Horizon lane",
         city: "Dallas",
         state: "TX"
-      });
+      }
+    };
   }
 }
