@@ -1,5 +1,6 @@
 <h2>Users</h2>
-<button [disabled]="!enableAdd" class="btn btn-light btn-block mb-3">Add new user</button>
+<button (click)="addUser({firstName:'Mary', lastName: 'James', isActive: true})" [disabled]="!enableAdd" class="btn btn-light btn-block mb-3">Add
+  new user</button>
 <ul class="list-unstyled" *ngIf="loaded && users?.length > 0">
   <li *ngFor="let user of users" class="card card-body mb-2" [class.bg-light]="user.isActive">
     <h3 [ngStyle]="currentStyles">{{ user.firstName }} {{ user.lastName }}</h3>
