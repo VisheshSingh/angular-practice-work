@@ -11,12 +11,7 @@ export class UsersComponent implements OnInit {
   user: User = {
     firstName: "",
     lastName: "",
-    age: null,
-    address: {
-      street: "",
-      city: "",
-      state: ""
-    }
+    email: ""
   };
   users: User[];
   showExtended: boolean = true;
@@ -31,36 +26,21 @@ export class UsersComponent implements OnInit {
       {
         firstName: "Mark",
         lastName: "Anthony",
-        age: 31,
-        address: {
-          street: "3 Horizon lane",
-          city: "Dallas",
-          state: "TX"
-        },
+        email: "mark@sparx.com",
         registered: new Date("01/02/2014 08:30:00"),
         hide: true
       },
       {
         firstName: "Jessica",
         lastName: "Pearson",
-        age: 37,
-        address: {
-          street: "BlueFox Avenue",
-          city: "Princeton",
-          state: "NJ"
-        },
+        email: "pearson@gmail.com",
         registered: new Date("06/21/2015 02:12:45"),
         hide: true
       },
       {
         firstName: "Harvey",
         lastName: "Spectre",
-        age: 24,
-        address: {
-          street: "1240 Greenbelt Blvd",
-          city: "Cincinnati",
-          state: "OH"
-        },
+        email: "Harvey@dontmesswithme.in",
         registered: new Date("09/10/2015 10:45:36"),
         hide: true
       }
@@ -68,22 +48,17 @@ export class UsersComponent implements OnInit {
     this.loaded = true;
   }
 
-  addUser() {
-    this.user.isActive = true;
-    this.user.registered = new Date();
-    this.users.unshift(this.user);
+  // addUser() {
+  //   this.user.isActive = true;
+  //   this.user.registered = new Date();
+  //   this.users.unshift(this.user);
 
-    this.user = {
-      firstName: "",
-      lastName: "",
-      age: null,
-      address: {
-        street: "",
-        city: "",
-        state: ""
-      }
-    };
-  }
+  //   this.user = {
+  //     firstName: "",
+  //     lastName: "",
+  //     email: ""
+  //   };
+  // }
 
   toggleHide(user: User) {
     user.hide = !user.hide;
