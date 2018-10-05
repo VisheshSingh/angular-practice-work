@@ -1,6 +1,36 @@
-<h2>Users</h2>
-<button (click)="addUser({firstName:'Mary', lastName: 'James', isActive: true})" [disabled]="!enableAdd" class="btn btn-light btn-block mb-3">Add
-  new user</button>
+<button (click)="showUserForm = !showUserForm" class="btn btn-dark mb-3">Add user</button>
+<div class="card card-body" *ngIf="showUserForm">
+  <h2>New User Form</h2>
+  <form (submit)="onSubmit($event)">
+    <div class="form-group">
+      <label>First Name</label>
+      <input type="text" class="form-control" name="firstName">
+    </div>
+    <div class="form-group">
+      <label>Last Name</label>
+      <input type="text" class="form-control" name="lastName">
+    </div>
+    <div class="form-group">
+      <label>Age</label>
+      <input type="number" class="form-control" name="age">
+    </div>
+    <div class="form-group">
+      <label>Street</label>
+      <input type="text" class="form-control" name="street">
+    </div>
+    <div class="form-group">
+      <label>City</label>
+      <input type="text" class="form-control" name="city">
+    </div>
+    <div class="form-group">
+      <label>State</label>
+      <input type="text" class="form-control" name="state">
+    </div>
+    <button (click)="addUser({firstName:'Mary', lastName: 'James', isActive: true})" [disabled]="!enableAdd" class="btn btn-light btn-block mb-3">Add
+      new user</button>
+  </form>
+</div>
+
 <ul class="list-unstyled" *ngIf="loaded && users?.length > 0">
   <li *ngFor="let user of users" class="card card-body mb-2" [class.bg-light]="user.isActive">
     <h3 [ngStyle]="currentStyles">{{ user.firstName }} {{ user.lastName }} <small *ngIf="user.age && user.address"><button
