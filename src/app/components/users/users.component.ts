@@ -9,7 +9,7 @@ import { User } from "../../models/User";
 })
 export class UsersComponent implements OnInit {
   users: User[];
-  showExtended: boolean = false;
+  showExtended: boolean = true;
   loaded: boolean = false;
   enableAdd: boolean = true;
   currentClasses: {};
@@ -29,7 +29,9 @@ export class UsersComponent implements OnInit {
           state: "TX"
         },
         image: "https://placeimg.com/600/600/people/1",
-        isActive: true
+        isActive: true,
+        balance: 100,
+        registered: new Date("01/02/2014 08:30:00")
       },
       {
         firstName: "Jessica",
@@ -40,7 +42,9 @@ export class UsersComponent implements OnInit {
           city: "Princeton",
           state: "NJ"
         },
-        image: "https://placeimg.com/600/600/people/2"
+        image: "https://placeimg.com/600/600/people/2",
+        balance: 100,
+        registered: new Date("06/21/2015 02:12:45")
       },
       {
         firstName: "Harvey",
@@ -51,7 +55,9 @@ export class UsersComponent implements OnInit {
           city: "Cincinnati",
           state: "OH"
         },
-        image: "https://placeimg.com/600/600/people/3"
+        image: "https://placeimg.com/600/600/people/3",
+        balance: 100,
+        registered: new Date("09/10/2015 10:45:36")
       }
     ];
     this.loaded = true;
