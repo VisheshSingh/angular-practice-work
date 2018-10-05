@@ -1,5 +1,5 @@
 <button (click)="showUserForm = !showUserForm" class="btn btn-dark mb-3">Add user</button>
-<div class="card card-body" *ngIf="showUserForm">
+<div class="card card-body mb-3" *ngIf="showUserForm">
   <h2>New User Form</h2>
   <form #userForm="ngForm" (ngSubmit)="onSubmit(userForm)">
     <div class="form-group">
