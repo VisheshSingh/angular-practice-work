@@ -28,6 +28,11 @@ export class PostService {
     return this.http.put<Post>(url, post, httpOptions);
   }
 
+  getPost(id): Observable<Post> {
+    const url = `${this.postUrl}/${id}`;
+    return this.http.get<Post>(url);
+  }
+
   deletePost(post: Post | number): Observable<Post> {
     const id = typeof post === "number" ? post : post.id;
     const url = `${this.postUrl}/${id}`;
